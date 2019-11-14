@@ -108,7 +108,8 @@ def configure(ctx):
 
     # Setup CFLAGS
     if (len(ctx.env.CFLAGS) == 0):
-        ctx.env.prepend_value('CFLAGS', ['-Os','-Wall', '-g', '-std=gnu99'])
+        ctx.env.prepend_value('CFLAGS', ['-Os','-Wall', '-g', '-std=gnu99', '-mcpu=cortex-m3','-mthumb'])#Changed -Os to O0, added -mcpu and -mthumb.
+		#ctx.env.prepend_value('CFLAGS', ['-Os','-Wall', '-g', '-std=gnu99'])
 
     # Setup extra includes
     ctx.env.append_unique('INCLUDES_CSP', ['include'] + ctx.options.includes.split(','))
