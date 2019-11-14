@@ -51,6 +51,8 @@ struct csp_can_config {
  */
 int csp_can_init(uint8_t mode, struct csp_can_config *conf);
 
+csp_queue_handle_t * get_csp_can_queue();
+
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
