@@ -115,7 +115,7 @@ static csp_thread_handle_t csp_can_rx_task_h;
 static csp_queue_handle_t csp_can_rx_queue;
 
 
-csp_queue_handle_t	get_csp_can_queue(){
+void * get_csp_can_queue(){
 	
 	return csp_can_rx_queue;
 }
