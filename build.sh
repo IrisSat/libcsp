@@ -30,5 +30,5 @@ python3 waf configure --toolchain=arm-none-eabi- --enable-if-can --with-os=freer
 
 python3 waf build
 
-rm "$project_path/Libraries/CSP/libcsp.a"
-cp build/libcsp.a "$project_path/Libraries/CSP/libcsp.a"
+#rm "$project_path/Libraries/CSP/libcsp.a"
+#cp build/libcsp.a "$project_path/Libraries/CSP/libcsp.a"
