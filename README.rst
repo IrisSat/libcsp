@@ -1,6 +1,11 @@
 The Cubesat Space Protocol
 ==========================
 
+This fork of CSP is contains some modifications to integrate with the Iris flight software.
+Some changes have been made to the can interface files and the can driver files.
+There is also a build script to build the library for the Smartfusion2 (Cortex M3) processor.
+
+
 Cubesat Space Protocol (CSP) is a small protocol stack written in C. CSP is designed to ease communication between distributed embedded systems in smaller networks, such as Cubesats. The design follows the TCP/IP model and includes a transport protocol, a routing protocol and several MAC-layer interfaces. The core of libcsp includes a router, a socket buffer pool and a connection oriented socket API.
 
 The protocol is based on a 32-bit header containing both transport and network-layer information. Its implementation is designed for, but not limited to, embedded systems such as the 8-bit AVR microprocessor and the 32-bit ARM and AVR from Atmel. The implementation is written in GNU C and is currently ported to run on FreeRTOS or POSIX operating systems such as Linux.
