@@ -55,7 +55,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #include <csp/arch/csp_queue.h>
 #include <csp/arch/csp_thread.h>
 
-#include <csp/drivers/can.h>
+#include <csp/drivers/csp_can.h>
 
 /* CAN header macros */
 #define CFP_HOST_SIZE		5
