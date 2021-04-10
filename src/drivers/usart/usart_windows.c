@@ -196,6 +196,12 @@ void usart_putstr(char* buf, int bufsz) {
     LeaveCriticalSection(&txSection);
 }
 
+void usart_putc(char c) {
+    EnterCriticalSection(&txSection);
+    prvSendData(&c, 1);
+    LeaveCriticalSection(&txSection);
+}
+
 void usart_insert(char c, void *pxTaskWoken) {
     /* redirect debug output to stdout */
     printf("%c", c);
