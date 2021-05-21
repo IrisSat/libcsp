@@ -63,6 +63,7 @@ def options(ctx):
     # OS    
     gr.add_option('--with-os', metavar='OS', default='posix', help='Set operating system. Must be either \'posix\', \'macosx\', \'windows\' or \'freertos\'')
     gr.add_option('--enable-init-shutdown', action='store_true', help='Use init system commands for shutdown/reboot')
+    gr.add_option('--endian', metavar='endianChoice', default='', help='Set endianess. Should be little or big')
 
     # Options
     gr.add_option('--with-rdp-max-window', metavar='SIZE', type=int, default=20, help='Set maximum window size for RDP')
@@ -216,7 +217,11 @@ def configure(ctx):
     ctx.define_cond('CSP_LOG_LEVEL_ERROR', ctx.options.with_loglevel in ('debug', 'info', 'warn', 'error'))
 
     # Check compiler endianness
-    endianness = ctx.check_endianness()
+    if ctx.options.endian == '':
+        endianness = ctx.check_endianness()
+    else:
+        endianness = ctx.options.endian
+
     ctx.define_cond('CSP_LITTLE_ENDIAN', endianness == 'little')
     ctx.define_cond('CSP_BIG_ENDIAN', endianness == 'big')
 
