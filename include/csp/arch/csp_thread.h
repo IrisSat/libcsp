@@ -49,7 +49,7 @@ typedef void * csp_thread_return_t;
 /* Windows interface */
 #if defined(CSP_WINDOWS)
 
-#include <Windows.h>
+#include <windows.h>
 #undef interface
 #include <process.h>
 

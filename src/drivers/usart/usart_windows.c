@@ -48,8 +48,12 @@ static void prvPrintError(void) {
 #endif
 
 static int prvTryOpenPort(const char *intf) {
+    //Apparently we must use \\.\COMx for com ports above 9, but works for all.
+    char * fullName = (char*) malloc(strlen(intf)+5);
+    snprintf(fullName,strlen(intf)+5,"\\\\.\\%s",intf);
+
     portHandle = CreateFileA(
-        intf, 
+        fullName, 
         GENERIC_READ|GENERIC_WRITE,
         0,
         NULL,
